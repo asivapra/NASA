@@ -1,5 +1,5 @@
 <img src="https://worldwind.arc.nasa.gov/img/nasa-logo.svg" height="100"/>
-<img src="http://nci.org.au/wp-content/uploads/2018/09/NCI-Australia-and-Text-website-2-2.png" height="100"/>
+<img src="http://nci.org.au/wp-content/uploads/2018/09/NCI-Australia-and-Text-website-2-2.png" style="width:300px"/>
 <p>in partnership with the <a href="http://www.esa.int" target="_blank">European Space Agency</a></p>
 
 # Web WorldWind - NCI version
