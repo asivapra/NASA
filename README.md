@@ -4,7 +4,7 @@
 
 # Web WorldWind - NCI version
 
-[![Build Status](https://github.com/asivapra/WebWorldWind/tree/develop)](https://github.com/asivapra/WebWorldWind/tree/develop)
+[![Build Status](https://travis-ci.org/NASAWorldWind/WebWorldWind.svg?branch=develop)](https://github.com/asivapra/WebWorldWind/tree/develop)
 
 ## Introduction
 
@@ -20,7 +20,6 @@ To demonstrate, we have added the GEOGLAM and DEA layers as published at the fol
 To be able to view from the web, the pages must reside on a webserver that is publicly accessible. The DEV environment
 at NCI is behind firewalls and cannot run a web server that is publicly accessible. For this demo, the pages are
 therefore hosted on the WebGenie server (https://www.webgenie.com/NCI_WorldWind). It is only a temporary location.
-
 
 3D virtual globe API for JavaScript, developed by NASA in partnership with ESA. Provides a geographic context, complete with terrain, 
 for visualizing geographic or geo-located information in 3D and 2D. Web WorldWind provides high-resolution terrain and 
