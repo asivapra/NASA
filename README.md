@@ -1,23 +1,32 @@
 <img src="https://worldwind.arc.nasa.gov/img/nasa-logo.svg" height="100"/>
+<img src="http://nci.org.au/wp-content/uploads/2018/09/NCI-Australia-and-Text-website-2-2.png" style="width:300px"/>
+<p>in partnership with the <a href="http://www.esa.int" target="_blank">European Space Agency</a></p>
 
-# Web WorldWind
+# Web WorldWind - NCI version
 
-```
-WorldWind team would like to inform you that starting April 5, 2019, NASA WorldWind project will be
-suspended. All the WorldWind servers providing elevation and imagery will be unavailable. While you
-can still download the SDKs from GitHub, there will be no technical support. If you have questions
-and/or concerns, please feel free to email at:
+[![Build Status](https://github.com/asivapra/WebWorldWind/tree/develop)](https://github.com/asivapra/WebWorldWind/tree/develop)
 
-worldwind-info@lists.nasa.gov
-```
+## Introduction
 
-[![Build Status](https://travis-ci.org/NASAWorldWind/WebWorldWind.svg?branch=develop)](https://travis-ci.org/NASAWorldWind/WebWorldWind)
+NASA Web World Wind is a JavaScript-based WMS web app that can be customised to add the GSKY Web Map Service. 
+To demonstrate, we have added the GEOGLAM and DEA layers as published at the following URLs.
 
-3D virtual globe API in JavaScript for the web, developed by NASA. The European Space Agency has provided valuable
-contributions to this platform since 2015. Web WorldWind provides a geographic context, complete with terrain, and a
-collection for shapes for displaying and interacting with geographic or geo-located information in 3D and 2D in any
-modern web browser. High-resolution terrain and imagery is retrieved from remote servers automatically as needed, while
-enabling developers to include their own custom terrain and imagery.
+1. https://gsky.nci.org.au/ows/geoglam
+
+2. https://gsky.nci.org.au/ows/dea
+
+## Technical
+
+To be able to view from the web, the pages must reside on a webserver that is publicly accessible. The DEV environment
+at NCI is behind firewalls and cannot run a web server that is publicly accessible. For this demo, the pages are
+therefore hosted on the WebGenie server (https://www.webgenie.com/NCI_WorldWind). It is only a temporary location.
+
+
+3D virtual globe API for JavaScript, developed by NASA in partnership with ESA. Provides a geographic context, complete with terrain, 
+for visualizing geographic or geo-located information in 3D and 2D. Web WorldWind provides high-resolution terrain and 
+imagery, retrieved from remote servers automatically as needed. Developers can provide custom terrain and imagery.
+Provides a collection of shapes for displaying and interacting with geographic data and representing a range of 
+geometric objects.   
 
 - [worldwind.arc.nasa.gov](https://worldwind.arc.nasa.gov) has setup instructions, developers guides, API documentation and more
 - [Forum](https://forum.worldwindcentral.com) provides help from the WorldWind community
@@ -25,9 +34,9 @@ enabling developers to include their own custom terrain and imagery.
 
 ## Get Started
 
-The Web WorldWind [Developer's Guide](https://worldwind.arc.nasa.gov/web) has a complete description of Web WorldWind's
-functionality. You'll also find there links to many Web WorldWind resources, including a user guide. The latest
-Web WorldWind release provides many simple examples showing how to use all of Web WorldWind's functionality.
+The Web WorldWind [Developer's Guide](https://worldwind.arc.nasa.gov/web) has a complete description of Web 
+WorldWind's functionality. You'll also find there links to many Web WorldWind resources, including a user guide. The 
+latest Web WorldWind release provides many simple examples showing how to use all of Web WorldWind's functionality.
 
 ## Building
 
@@ -45,15 +54,4 @@ Web WorldWind release provides many simple examples showing how to use all of We
 
 ## License
 
-Copyright 2003-2006, 2009, 2017, United States Government, as represented by the Administrator of the
-National Aeronautics and Space Administration. All rights reserved.
-
-The NASAWorldWind/WebWorldWind platform is licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+Licensed under the [Apache License, Version 2.0](https://apache.org/licenses/LICENSE-2.0).
