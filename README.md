@@ -40,7 +40,7 @@ The salient code changes from the original are listed below. Cosmetic and text-o
 
 #### Scripts
 
-	- \<script data-main="geoglam" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"\>\</script\>
+	- <script data-main="geoglam" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"\>\</script>
 
 The value, "geoglam", for 'data-main' denotes "geoglam.js", which is the only JavaScript file required to be altered.
 Replace it with 'dea' in the dea.html.
