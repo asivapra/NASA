@@ -38,14 +38,14 @@ The salient code changes from the original are listed below. Cosmetic an text-on
 
 1. HTML Files: `geoglam.html` and `dea.html`
 
-	- <script data-main="geoglam" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"></script>
+	- \<script data-main="geoglam" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"\>\</script\>
 		- The value, "geoglam", for 'data-main' denotes "geoglam.js", which is the only JavaScript file required to be altered.
 
-	- <link rel="stylesheet" href="custom.css">
+	- \<link rel="stylesheet" href="custom.css"\>
 		- Changes to the button and text styles to include more layers on one page. These styles overwrite the defaults 
 		in https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css
 
-	- <table class="jumbotron hidden-xs" style="width:100%">
+	- \<table class="jumbotron hidden-xs" style="width:100%"\>
 		- Header logos and text.
 		
 2. JavaScript Files: `geoglam.js` and `dea.js`
