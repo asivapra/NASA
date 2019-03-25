@@ -74,22 +74,22 @@ denotes the altitude above the equator from where the image is viewed. Thus, 8e6
 #### Basemap and Control Layers
 
 	var layers = [
-    	- {layer: new WorldWind.BMNGLayer(), enabled: false},
-		- {layer: new WorldWind.BingRoadsLayer(null), enabled: true}
+    	{layer: new WorldWind.BMNGLayer(), enabled: false},
+		{layer: new WorldWind.BingRoadsLayer(null), enabled: true}
 
 These are the basemaps and other layers such as controls. Set as true/false to display them initially. Can be toggled
 as in the case of GSKY layers.
 
 #### GSKY Server Address
 
-	- var serviceAddress = "https://gsky.nci.org.au/ows/geoglam?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0";
+	var serviceAddress = "https://gsky.nci.org.au/ows/geoglam?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0";
 
 The URL of GSKY production server. Replace 'geoglam' with 'dea' in 'dea.js'.
 
 #### GSKY Layers
 
-	-	var layerName1 = 	"landsat5_geomedian";
-	-	var layerTitle1 = 	"LS5 surface reflectance geomedian";
+	var layerName1 = 	"landsat5_geomedian";
+	var layerTitle1 = 	"LS5 surface reflectance geomedian";
 
 The layer name and title. These come from the Capabilities.xml. The name must be exact, but the title is free text.
 
@@ -99,23 +99,23 @@ Use this link to display the capabilities:
 
 #### Code for the layers	
 	
-    - var createLayer2 = function (xmlDom) {
-     - var wms = new WorldWind.WmsCapabilities(xmlDom);
-     - var wmsLayerCapabilities = wms.getNamedLayer(layerName1);
-     - var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapabilities);
-     - wmsConfig.title = layerTitle1;
-     - var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
-     - wmsLayer.enabled = false;
-     - wwd.addLayer(wmsLayer);
-     - layerManager.synchronizeLayerList();
-     - };
+    var createLayer2 = function (xmlDom) {
+		var wms = new WorldWind.WmsCapabilities(xmlDom);
+		var wmsLayerCapabilities = wms.getNamedLayer(layerName1);
+		var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapabilities);
+		wmsConfig.title = layerTitle1;
+		var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
+		wmsLayer.enabled = false;
+		wwd.addLayer(wmsLayer);
+		layerManager.synchronizeLayerList();
+		};
 
 Set true/false to display the layer initially. Can toggle the layers. The layers may not appear in the 
 same order as in the JS file.
 
 #### Create the layers
 
-	- $.get(serviceAddress).done(createLayer1).fail(logError);
+	$.get(serviceAddress).done(createLayer1).fail(logError);
 	
 Create the layer. Due to the asynchronicity of fetching the data, teh layers will not appear in the same
 order as in the JS file.
