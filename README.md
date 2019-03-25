@@ -40,22 +40,22 @@ The salient code changes from the original are listed below. Cosmetic and text-o
 
 #### Scripts
 
-	- <script data-main="geoglam" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"></script>
+	<script data-main="geoglam" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"></script>
 
 The value, "geoglam", for 'data-main' denotes "geoglam.js", which is the only JavaScript file required to be altered.
 Replace it with 'dea' in the dea.html.
 
 #### Stylesheets
 
-	- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	- <link rel="stylesheet" href="custom.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="custom.css">
 
 Changes to the button and text styles to include more layers on one page. These styles overwrite the defaults 
 in https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css
 
 #### Page content
 
-	- <table class="jumbotron hidden-xs" style="width:100%">
+	<table class="jumbotron hidden-xs" style="width:100%">
 
 Header logos and text at the top and footer at the bottom of the page.
 		
