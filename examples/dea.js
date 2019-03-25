@@ -32,7 +32,7 @@ requirejs(['./WorldWindShim',
 // Center the map on: Alice Springs
 		wwd.navigator.lookAtLocation.latitude = -26; 
 		wwd.navigator.lookAtLocation.longitude = 134;
-		wwd.navigator.range = 5e6; // 2 million meters above the ellipsoid
+		wwd.navigator.range = 4e6; // 4 million meters above the ellipsoid
 // Redraw the WorldWindow.
 		wwd.redraw();
 
@@ -167,7 +167,7 @@ requirejs(['./WorldWindShim',
             var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapabilities);
             wmsConfig.title = layerTitle4;
             var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
-            wmsLayer.enabled = false;
+            wmsLayer.enabled = true;
             wwd.addLayer(wmsLayer);
             layerManager.synchronizeLayerList();
         };
@@ -200,7 +200,7 @@ requirejs(['./WorldWindShim',
             var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapabilities);
             wmsConfig.title = layerTitle7;
             var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
-            wmsLayer.enabled = true;
+            wmsLayer.enabled = false;
             wwd.addLayer(wmsLayer);
             layerManager.synchronizeLayerList();
         };

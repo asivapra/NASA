@@ -29,10 +29,10 @@ requirejs(['./WorldWindShim',
         // Create the WorldWindow.
         var wwd = new WorldWind.WorldWindow("canvasOne");
 
-// Center the map on: Alice Springs
+// Center the map on Alice Springs:
 		wwd.navigator.lookAtLocation.latitude = -26; 
 		wwd.navigator.lookAtLocation.longitude = 134;
-		wwd.navigator.range = 8e6; // 2 million meters above the ellipsoid
+		wwd.navigator.range = 8e6; // 8 million meters above the ellipsoid
 // Redraw the WorldWindow.
 		wwd.redraw();
 
@@ -88,7 +88,12 @@ requirejs(['./WorldWindShim',
         var layerName4 = "modis_fract_cov_monthly";
         var layerName5 = "chirps";
 
-        // modis_tot_cov_8day
+		var layerTitle1 = 	"Total Vegetation Cover 8-day";
+		var layerTitle2 = 	"Total Vegetation Cover Monthly";
+		var layerTitle3 = 	"Vegetation Fractional Cover 8-day";
+		var layerTitle4 = 	"Vegetation Fractional Cover Monthly";
+		var layerTitle5 = 	"Monthly Precipitation CHIRPS";
+
         // Called asynchronously to parse and create the WMS layer
         var createLayer1 = function (xmlDom) {
             // Create a WmsCapabilities object from the XML DOM
@@ -98,7 +103,7 @@ requirejs(['./WorldWindShim',
             // Form a configuration object from the WmsLayerCapability object
             var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapabilities);
             // Modify the configuration objects title property to a more user friendly title
-            wmsConfig.title = "Total Vegetation Cover 8-day";
+            wmsConfig.title = layerTitle1;
             // Create the WMS Layer from the configuration object
             var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
             wmsLayer.enabled = false;
@@ -108,81 +113,46 @@ requirejs(['./WorldWindShim',
             layerManager.synchronizeLayerList();
         };
 
-        // modis_tot_cov_monthly
-        // Called asynchronously to parse and create the WMS layer
         var createLayer2 = function (xmlDom) {
-            // Create a WmsCapabilities object from the XML DOM
             var wms = new WorldWind.WmsCapabilities(xmlDom);
-            // Retrieve a WmsLayerCapabilities object by the desired layer name
             var wmsLayerCapabilities = wms.getNamedLayer(layerName2);
-            // Form a configuration object from the WmsLayerCapability object
             var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapabilities);
-            // Modify the configuration objects title property to a more user friendly title
-            wmsConfig.title = "Total Vegetation Cover Monthly";
-            // Create the WMS Layer from the configuration object
+            wmsConfig.title = layerTitle2;
             var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
             wmsLayer.enabled = true;
-
-            // Add the layers to WorldWind and update the layer manager
             wwd.addLayer(wmsLayer);
             layerManager.synchronizeLayerList();
         };
 
-        // modis_fract_cov_8day
-        // Called asynchronously to parse and create the WMS layer
         var createLayer3 = function (xmlDom) {
-            // Create a WmsCapabilities object from the XML DOM
             var wms = new WorldWind.WmsCapabilities(xmlDom);
-            // Retrieve a WmsLayerCapabilities object by the desired layer name
             var wmsLayerCapabilities = wms.getNamedLayer(layerName3);
-            // Form a configuration object from the WmsLayerCapability object
             var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapabilities);
-            // Modify the configuration objects title property to a more user friendly title
-            wmsConfig.title = "Vegetation Fractional Cover 8-day";
-            // Create the WMS Layer from the configuration object
+            wmsConfig.title = layerTitle3;
             var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
             wmsLayer.enabled = false;
-
-            // Add the layers to WorldWind and update the layer manager
             wwd.addLayer(wmsLayer);
             layerManager.synchronizeLayerList();
         };
 
-        // modis_fract_cov_monthly
-        // Called asynchronously to parse and create the WMS layer
         var createLayer4 = function (xmlDom) {
-            // Create a WmsCapabilities object from the XML DOM
             var wms = new WorldWind.WmsCapabilities(xmlDom);
-            // Retrieve a WmsLayerCapabilities object by the desired layer name
             var wmsLayerCapabilities = wms.getNamedLayer(layerName4);
-            // Form a configuration object from the WmsLayerCapability object
             var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapabilities);
-            // Modify the configuration objects title property to a more user friendly title
-            wmsConfig.title = "Vegetation Fractional Cover Monthly";
-            // Create the WMS Layer from the configuration object
+            wmsConfig.title = layerTitle4;
             var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
             wmsLayer.enabled = false;
-
-            // Add the layers to WorldWind and update the layer manager
             wwd.addLayer(wmsLayer);
             layerManager.synchronizeLayerList();
         };
 
-        // chirps
-        // Called asynchronously to parse and create the WMS layer
         var createLayer5 = function (xmlDom) {
-            // Create a WmsCapabilities object from the XML DOM
             var wms = new WorldWind.WmsCapabilities(xmlDom);
-            // Retrieve a WmsLayerCapabilities object by the desired layer name
             var wmsLayerCapabilities = wms.getNamedLayer(layerName5);
-            // Form a configuration object from the WmsLayerCapability object
             var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapabilities);
-            // Modify the configuration objects title property to a more user friendly title
-            wmsConfig.title = "Monthly Precipitation CHIRPS";
-            // Create the WMS Layer from the configuration object
+            wmsConfig.title = layerTitle5;
             var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
             wmsLayer.enabled = false;
-            // Add the layers to WorldWind and update the layer manager
             wwd.addLayer(wmsLayer);
             layerManager.synchronizeLayerList();
         };
@@ -192,7 +162,6 @@ requirejs(['./WorldWindShim',
             console.log("There was a failure retrieving the capabilities document: " + text + " exception: " + exception);
         };
 
-//        $.get(serviceAddress0).done(createLayer0).fail(logError); // DO NOT DELETE
         $.get(serviceAddress).done(createLayer1).fail(logError);
         $.get(serviceAddress).done(createLayer2).fail(logError);
         $.get(serviceAddress).done(createLayer3).fail(logError);
