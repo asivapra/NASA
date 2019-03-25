@@ -26,8 +26,9 @@ therefore hosted on the WebGenie server (https://www.webgenie.com/NCI_WorldWind)
 The /examples directory has several \*.html and \*.js files that can be adapted for various map services. We have 
 adapted the following files for making the demo pages.
 
-`/examples/WMS.html` ==> `/examples/geoglam.html` and `/examples/dea.html`
-`/examples/WMS.js` ==> `/examples/geoglam.js` and `/examples/dea.js`
+`/examples/WMS.html` => `/examples/geoglam.html` and `/examples/dea.html`
+
+`/examples/WMS.js` => `/examples/geoglam.js` and `/examples/dea.js`
 
 
 
