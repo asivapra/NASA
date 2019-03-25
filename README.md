@@ -41,24 +41,28 @@ The salient code changes from the original are listed below. Cosmetic and text-o
 #### Scripts
 
 	- \<script data-main="geoglam" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"\>\</script\>
-		- The value, "geoglam", for 'data-main' denotes "geoglam.js", which is the only JavaScript file required to be altered.
-		Replace it with 'dea' in the dea.html.
+
+The value, "geoglam", for 'data-main' denotes "geoglam.js", which is the only JavaScript file required to be altered.
+Replace it with 'dea' in the dea.html.
 
 #### Stylesheets
 
 	- \<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"\>
 	- \<link rel="stylesheet" href="custom.css"\>
-		- Changes to the button and text styles to include more layers on one page. These styles overwrite the defaults 
-		in https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css
+
+Changes to the button and text styles to include more layers on one page. These styles overwrite the defaults 
+in https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css
 
 #### Page content
 
 	- \<table class="jumbotron hidden-xs" style="width:100%"\>
-		- Header logos and text.
+
+Header logos and text.
 		
 2. JavaScript Files: `geoglam.js` and `dea.js`
 
 #### Center the map
+
 	- // Center the map on Alice Springs:
 		- wwd.navigator.lookAtLocation.latitude = -26; 
 		- wwd.navigator.lookAtLocation.longitude = 134;
@@ -67,6 +71,8 @@ The salient code changes from the original are listed below. Cosmetic and text-o
 The above code brings Australia to the forefront, instead of USA, and centers it on the map. The 'navigator.range' 
 denotes the altitude above the equator from where the image is viewed. Thus, 8e6 means 8,000 meters or 8km above Earth.
 
+#### Basemap and Control Layers
+
 	- var layers = [
     	- {layer: new WorldWind.BMNGLayer(), enabled: false},
 		- {layer: new WorldWind.BingRoadsLayer(null), enabled: true}
@@ -74,9 +80,13 @@ denotes the altitude above the equator from where the image is viewed. Thus, 8e6
 These are the basemaps and other layers such as controls. Set as true/false to display them initially. Can be toggled
 as in the case of GSKY layers.
 
+#### GSKY Server Address
+
 	- var serviceAddress = "https://gsky.nci.org.au/ows/geoglam?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0";
 
 The URL of GSKY production server. Replace 'geoglam' with 'dea' in 'dea.js'.
+
+#### GSKY Layers
 
 	-	var layerName1 = 	"landsat5_geomedian";
 	-	var layerTitle1 = 	"LS5 surface reflectance geomedian";
@@ -87,8 +97,8 @@ Use this link to display the capabilities:
 
 	- `https://gsky.nci.org.au/ows/geoglam?service=WMS&version=1.3.0&request=GetCapabilities`
 
-Main code to show the GSKY layers:
-
+#### Code for the layers	
+	
     - var createLayer2 = function (xmlDom) {
      - var wms = new WorldWind.WmsCapabilities(xmlDom);
      - var wmsLayerCapabilities = wms.getNamedLayer(layerName2);
@@ -103,10 +113,11 @@ Main code to show the GSKY layers:
 Set true/false to display the layer initially. Can toggle the layers. The layers may not appear in the 
 same order as in the JS file.
 
+#### Create the layers
+
 	- $.get(serviceAddress).done(createLayer1).fail(logError);
 	
 Create the layer.	
-
      
 ## ---------------------------------------------------------------
 3D virtual globe API for JavaScript, developed by NASA in partnership with ESA. Provides a geographic context, complete with terrain, 
