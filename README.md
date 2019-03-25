@@ -57,7 +57,7 @@ in https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css
 
 	- <table class="jumbotron hidden-xs" style="width:100%">
 
-Header logos and text.
+Header logos and text at the top and footer at the bottom of the page.
 		
 ### 2. JavaScript Files: `geoglam.js` and `dea.js`
 
@@ -101,9 +101,9 @@ Use this link to display the capabilities:
 	
     - var createLayer2 = function (xmlDom) {
      - var wms = new WorldWind.WmsCapabilities(xmlDom);
-     - var wmsLayerCapabilities = wms.getNamedLayer(layerName2);
+     - var wmsLayerCapabilities = wms.getNamedLayer(layerName1);
      - var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapabilities);
-     - wmsConfig.title = layerTitle2;
+     - wmsConfig.title = layerTitle1;
      - var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
      - wmsLayer.enabled = false;
      - wwd.addLayer(wmsLayer);
@@ -117,7 +117,8 @@ same order as in the JS file.
 
 	- $.get(serviceAddress).done(createLayer1).fail(logError);
 	
-Create the layer.	
+Create the layer. Due to the asynchronicity of fetching the data, teh layers will not appear in the same
+order as in the JS file.
      
 ---------------------------------------------------------------
 
