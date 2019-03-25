@@ -38,19 +38,27 @@ The salient code changes from the original are listed below. Cosmetic and text-o
 
 1. HTML Files: `geoglam.html` and `dea.html`
 
+#### Scripts
+
 	- \<script data-main="geoglam" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"\>\</script\>
 		- The value, "geoglam", for 'data-main' denotes "geoglam.js", which is the only JavaScript file required to be altered.
 		Replace it with 'dea' in the dea.html.
 
+#### Stylesheets
+
+	- \<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"\>
 	- \<link rel="stylesheet" href="custom.css"\>
 		- Changes to the button and text styles to include more layers on one page. These styles overwrite the defaults 
 		in https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css
+
+#### Page content
 
 	- \<table class="jumbotron hidden-xs" style="width:100%"\>
 		- Header logos and text.
 		
 2. JavaScript Files: `geoglam.js` and `dea.js`
 
+#### Center the map
 	- // Center the map on Alice Springs:
 		- wwd.navigator.lookAtLocation.latitude = -26; 
 		- wwd.navigator.lookAtLocation.longitude = 134;
@@ -76,8 +84,30 @@ The URL of GSKY production server. Replace 'geoglam' with 'dea' in 'dea.js'.
 The layer name and title. These come from the Capabilities.xml. The name must be exact, but the title is free text.
 
 Use this link to display the capabilities: 
+
 	- `https://gsky.nci.org.au/ows/geoglam?service=WMS&version=1.3.0&request=GetCapabilities`
 
+Main code to show the GSKY layers:
+
+    - var createLayer2 = function (xmlDom) {
+     - var wms = new WorldWind.WmsCapabilities(xmlDom);
+     - var wmsLayerCapabilities = wms.getNamedLayer(layerName2);
+     - var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapabilities);
+     - wmsConfig.title = layerTitle2;
+     - var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
+     - wmsLayer.enabled = false;
+     - wwd.addLayer(wmsLayer);
+     - layerManager.synchronizeLayerList();
+     - };
+
+Set true/false to display the layer initially. Can toggle the layers. The layers may not appear in the 
+same order as in the JS file.
+
+	- $.get(serviceAddress).done(createLayer1).fail(logError);
+	
+Create the layer.	
+
+     
 ## ---------------------------------------------------------------
 3D virtual globe API for JavaScript, developed by NASA in partnership with ESA. Provides a geographic context, complete with terrain, 
 for visualizing geographic or geo-located information in 3D and 2D. Web WorldWind provides high-resolution terrain and 
