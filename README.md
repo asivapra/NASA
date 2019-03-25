@@ -121,6 +121,8 @@ Create the layer.
      
 ---------------------------------------------------------------
 
+# Background Information
+
 3D virtual globe API for JavaScript, developed by NASA in partnership with ESA. Provides a geographic context, complete with terrain, 
 for visualizing geographic or geo-located information in 3D and 2D. Web WorldWind provides high-resolution terrain and 
 imagery, retrieved from remote servers automatically as needed. Developers can provide custom terrain and imagery.
