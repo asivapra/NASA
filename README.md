@@ -56,7 +56,7 @@ The salient code changes from the original are listed below. Cosmetic and text-o
 		- wwd.navigator.lookAtLocation.longitude = 134;
 		- wwd.navigator.range = 8e6; 
 
-The above code brings Australia to the forefront, instead of the USA, and centers it on the page. The 'navigator.range' 
+The above code brings Australia to the forefront, instead of USA, and centers it on the map. The 'navigator.range' 
 denotes the altitude above the equator from where the image is viewed. Thus, 8e6 means 8,000 meters or 8km above Earth.
 
 	- var layers = [
@@ -64,11 +64,19 @@ denotes the altitude above the equator from where the image is viewed. Thus, 8e6
 		- {layer: new WorldWind.BingRoadsLayer(null), enabled: true}
 
 These are the basemaps and other layers such as controls. Set as true/false to display them initially. Can be toggled
-as in teh case of GSKY layers.
+as in the case of GSKY layers.
 
+	- var serviceAddress = "https://gsky.nci.org.au/ows/geoglam?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0";
 
+The URL of GSKY production server. Replace 'geoglam' with 'dea' in 'dea.js'.
 
+	-	var layerName1 = 	"landsat5_geomedian";
+	-	var layerTitle1 = 	"LS5 surface reflectance geomedian";
 
+The layer name and title. These come from the Capabilities.xml. The name must be exact, but the title is free text.
+
+Use this link to display the capabilities: 
+	- `https://gsky.nci.org.au/ows/geoglam?service=WMS&version=1.3.0&request=GetCapabilities`
 
 ## ---------------------------------------------------------------
 3D virtual globe API for JavaScript, developed by NASA in partnership with ESA. Provides a geographic context, complete with terrain, 
