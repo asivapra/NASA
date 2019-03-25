@@ -36,7 +36,7 @@ adapted the following files for making the demo pages.
 
 The salient code changes from the original are listed below. Cosmetic and text-only changes are not listed.
 
-1. HTML Files: `geoglam.html` and `dea.html`
+### 1. HTML Files: `geoglam.html` and `dea.html`
 
 #### Scripts
 
@@ -59,7 +59,7 @@ in https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css
 
 Header logos and text.
 		
-2. JavaScript Files: `geoglam.js` and `dea.js`
+### 2. JavaScript Files: `geoglam.js` and `dea.js`
 
 #### Center the map
 
