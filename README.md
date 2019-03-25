@@ -50,7 +50,7 @@ Replace it with 'dea' in the dea.html.
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="custom.css">
 
-Changes to the button and text styles to include more layers on one page. These styles overwrite the defaults 
+The 'custom.css' has changes to the button and text styles to include more layers on one page. They overwrite the defaults 
 in https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css
 
 #### Page content
@@ -75,7 +75,7 @@ denotes the altitude above the equator from where the image is viewed. Thus, 8e6
 
 	var layers = [
     	{layer: new WorldWind.BMNGLayer(), enabled: false},
-		{layer: new WorldWind.BingRoadsLayer(null), enabled: true}
+		{layer: new WorldWind.BingRoadsLayer(null), enabled: true},
 		...
 	];
 
@@ -90,8 +90,8 @@ The URL of GSKY production server. Replace 'geoglam' with 'dea' in 'dea.js'.
 
 #### GSKY Layers
 
-	var layerName1 = 	"landsat5_geomedian";
-	var layerTitle1 = 	"LS5 surface reflectance geomedian";
+	var layerName1 = "landsat5_geomedian";
+	var layerTitle1 = "LS5 surface reflectance geomedian";
 
 The layer name and title. These come from the Capabilities.xml. The name must be exact, but the title is free text.
 
