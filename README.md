@@ -34,12 +34,13 @@ adapted the following files for making the demo pages.
 
 ### Code Change
 
-The salient code changes from the original are listed below. Cosmetic an text-only changes are not listed.
+The salient code changes from the original are listed below. Cosmetic and text-only changes are not listed.
 
 1. HTML Files: `geoglam.html` and `dea.html`
 
 	- \<script data-main="geoglam" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"\>\</script\>
 		- The value, "geoglam", for 'data-main' denotes "geoglam.js", which is the only JavaScript file required to be altered.
+		Replace it with 'dea' in the dea.html.
 
 	- \<link rel="stylesheet" href="custom.css"\>
 		- Changes to the button and text styles to include more layers on one page. These styles overwrite the defaults 
@@ -49,6 +50,24 @@ The salient code changes from the original are listed below. Cosmetic an text-on
 		- Header logos and text.
 		
 2. JavaScript Files: `geoglam.js` and `dea.js`
+
+	- // Center the map on Alice Springs:
+		- wwd.navigator.lookAtLocation.latitude = -26; 
+		- wwd.navigator.lookAtLocation.longitude = 134;
+		- wwd.navigator.range = 8e6; 
+
+The above code brings Australia to the forefront, instead of the USA, and centers it on the page. The 'navigator.range' 
+denotes the altitude above the equator from where the image is viewed. Thus, 8e6 means 8,000 meters or 8km above Earth.
+
+	- var layers = [
+    	- {layer: new WorldWind.BMNGLayer(), enabled: false},
+		- {layer: new WorldWind.BingRoadsLayer(null), enabled: true}
+
+These are the basemaps and other layers such as controls. Set as true/false to display them initially. Can be toggled
+as in teh case of GSKY layers.
+
+
+
 
 
 ## ---------------------------------------------------------------
