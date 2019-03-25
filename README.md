@@ -76,6 +76,8 @@ denotes the altitude above the equator from where the image is viewed. Thus, 8e6
 	var layers = [
     	{layer: new WorldWind.BMNGLayer(), enabled: false},
 		{layer: new WorldWind.BingRoadsLayer(null), enabled: true}
+		...
+	];
 
 These are the basemaps and other layers such as controls. Set as true/false to display them initially. Can be toggled
 as in the case of GSKY layers.
@@ -108,7 +110,7 @@ Use this link to display the capabilities:
 		wmsLayer.enabled = false;
 		wwd.addLayer(wmsLayer);
 		layerManager.synchronizeLayerList();
-		};
+	};
 
 Set true/false to display the layer initially. Can toggle the layers. The layers may not appear in the 
 same order as in the JS file.
