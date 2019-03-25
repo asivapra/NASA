@@ -63,17 +63,17 @@ Header logos and text at the top and footer at the bottom of the page.
 
 #### Center the map
 
-	- // Center the map on Alice Springs:
-		- wwd.navigator.lookAtLocation.latitude = -26; 
-		- wwd.navigator.lookAtLocation.longitude = 134;
-		- wwd.navigator.range = 8e6; 
+	// Center the map on Alice Springs:
+		wwd.navigator.lookAtLocation.latitude = -26; 
+		wwd.navigator.lookAtLocation.longitude = 134;
+		wwd.navigator.range = 8e6; 
 
 The above code brings Australia to the forefront, instead of USA, and centers it on the map. The 'navigator.range' 
 denotes the altitude above the equator from where the image is viewed. Thus, 8e6 means 8,000 meters or 8km above Earth.
 
 #### Basemap and Control Layers
 
-	- var layers = [
+	var layers = [
     	- {layer: new WorldWind.BMNGLayer(), enabled: false},
 		- {layer: new WorldWind.BingRoadsLayer(null), enabled: true}
 
@@ -95,7 +95,7 @@ The layer name and title. These come from the Capabilities.xml. The name must be
 
 Use this link to display the capabilities: 
 
-	- `https://gsky.nci.org.au/ows/geoglam?service=WMS&version=1.3.0&request=GetCapabilities`
+	https://gsky.nci.org.au/ows/geoglam?service=WMS&version=1.3.0&request=GetCapabilities
 
 #### Code for the layers	
 	
