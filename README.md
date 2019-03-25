@@ -15,7 +15,9 @@ We have added the GEOGLAM and DEA layers as published at the following URLs.
 
 2. https://gsky.nci.org.au/ows/dea
 
-## Technical
+## User Guide
+
+## Technical Details
 
 To be able to view from the web, the pages must reside on a webserver that is publicly accessible. The DEV environment
 at NCI is behind firewalls and cannot run a web server that is publicly accessible. For this demo, the pages are
@@ -30,8 +32,15 @@ adapted the following files for making the demo pages.
 
 `/examples/WMS.js` => `/examples/geoglam.js` and `/examples/dea.js`
 
+### Code Change
 
+The salient code changes from the original are listed below. Cosmetic an text-only changes are not listed.
 
+1. HTML Files: `geoglam.html` and `dea.html`
+
+```<script data-main="*geoglam*" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"></script>```
+
+	- The value, "geoglam", for 'data-main' denotes "geoglam.js", which is the only JavaScript file required to be altered.
 
 ## ---------------------------------------------------------------------------------------------------------------------
 3D virtual globe API for JavaScript, developed by NASA in partnership with ESA. Provides a geographic context, complete with terrain, 
