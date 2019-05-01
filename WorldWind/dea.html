@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>NASA WorldWind - DEA</title>
+	<title>NASA WorldWind - DEA</title>
     <!--NOTE: Most Web WorldWind examples use jquery, Bootstrap and requirejs but those technologies are NOT-->
     <!--required by Web WorldWind. See SimplestExample.html for an example of using Web WorldWind without them.-->
     <meta charset="utf-8">
@@ -11,23 +11,43 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script data-main="dea" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"></script>
     <link rel="stylesheet" href="custom.css"> <!-- AVS: Added to change the styles of buttons -->
+	<script type="text/javascript">
+	function showHide(id,type,state)
+	{
+		if (state == undefined) state = 'block';
+		if(id)
+		{
+			var style = document.getElementById(id).style.display;
+			document.getElementById(id).style.display=""+state;
+		}
+	}
+	function Fin()
+	{
+		showHide('avs_waiting_circle','span','none');
+	}
+	</script>
 </head>
-<body>
+<body style="background-image:url('/images/bg-page.png')" onLoad="Fin()">
 <div class="container">
     <table class="jumbotron hidden-xs" style="width:100%">
 		<tr>
-			<td style="width:20%">
-				<img src="http://nci.org.au/wp-content/uploads/2018/09/NCI-Australia-and-Text-website-2-2.png" style="width:300px">
+			<td style="width:10%">
+				<img src="https://nci.org.au/wp-content/uploads/2018/09/NCI-Australia-and-Text-website-2-2.png" style="width:300px">
 			</td>
-			<td style="text-align:right">
-				<img src="http://gsky.nci.org.au/img/logo.svg" width="150"><br>
+			<td style="text-align:right; width:10%; white-space:nowrap">
+				<img src="https://worldwind.arc.nasa.gov/img/nasa-logo.svg" width="100">
+				<img src="https://gsky.nci.org.au/img/logo.svg" width="150">
+				<span id="avs_waiting_circle" style="display:block; text-align:left; padding-top:0px">
+				<span style="font-size: small"><img src="/images/ajax-loader.gif" alt="Wait!"><br><small><small> Please wait! It will take about 60 seconds.</small></small></span></span>
 			</td>
 			<td nowrap>
-				<h2>DEA Landsat Data via GSKY Web Map Service</h2><br><h6>Powered by: NASA WebWorldWind</h6>
+				<h2>WorldWind Web Map Service - DEA</h2>(Click here for 
+				<a href="geoglam.html">GEOGLAM</a>)
+				
+				<br><h5>Powered by: <b>GSKY from NCI</b> and <b>NASA World Wind</b></h5>
 			</td>
 		</tr>
     </table>
-<!--				<span style="background-color:cyan; font-size:14px; font-weight:bold">Web Map Service: DEA</span>-->
     <div class="row">
         <div class="col-sm-3">
             <h3><b>Layers</b></h3>
@@ -35,7 +55,7 @@
             </div>
             <h3><b>Destination</b></h3>
             <div class="input-group" id="searchBox">
-                <input type="text" class="form-control" placeholder="GoTo" id="searchText" value="Canberra"/>
+                <input type="text" class="form-control" placeholder="GoTo" id="searchText" value="Alice Springs"/>
                 <span class="input-group-btn">
                     <button id="searchButton" class="btn btn-primary" type="button">
                         <span class="glyphicon glyphicon-search"></span>
