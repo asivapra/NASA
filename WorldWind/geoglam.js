@@ -80,7 +80,9 @@ requirejs(['./WorldWindShim',
             layerManager.synchronizeLayerList();
         };
 */
-        var serviceAddress = "https://gsky.nci.org.au/ows/geoglam?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0";
+        var serviceAddress = "https://gsky.nci.org.au/ows/geoglam?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0"; // Working
+//        var serviceAddress = "http://localhost:8080/ows/geoglam?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0";
+//        var serviceAddress = "http://130.56.242.15/ows/geoglam?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0";
         // Named layer displaying Average Temperature data
         var layerName1 = "modis_tot_cov_8day";
         var layerName2 = "modis_tot_cov_monthly";
@@ -118,6 +120,7 @@ requirejs(['./WorldWindShim',
             var wmsLayerCapabilities = wms.getNamedLayer(layerName2);
             var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapabilities);
             wmsConfig.title = layerTitle2;
+wmsConfig.time = "2018-02-18";
             var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
             wmsLayer.enabled = true;
             wwd.addLayer(wmsLayer);

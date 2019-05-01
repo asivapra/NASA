@@ -167,7 +167,7 @@ requirejs(['./WorldWindShim',
             var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapabilities);
             wmsConfig.title = layerTitle4;
             var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
-            wmsLayer.enabled = true;
+            wmsLayer.enabled = false;
             wwd.addLayer(wmsLayer);
             layerManager.synchronizeLayerList();
         };
@@ -277,7 +277,7 @@ requirejs(['./WorldWindShim',
             var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapabilities);
             wmsConfig.title = layerTitle14;
             var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
-            wmsLayer.enabled = false;
+            wmsLayer.enabled = true;
             wwd.addLayer(wmsLayer);
             layerManager.synchronizeLayerList();
         };
